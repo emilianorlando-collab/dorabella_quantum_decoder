@@ -1,15 +1,58 @@
 # Dorabella Quantum Decoder
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Qiskit](https://img.shields.io/badge/Qiskit-Quantum-6929C4?logo=qiskit&logoColor=white)
+![IBM Quantum](https://img.shields.io/badge/IBM%20Quantum-Runtime-052FAD?logo=ibm&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Numerics-013243?logo=numpy&logoColor=white)
+![Status](https://img.shields.io/badge/status-research--prototype-orange)
+
 Quantum-hybrid research toolkit for exploring the Dorabella cipher with strict
 symbolic constraints, lexical search, persistent memory, and optional Qiskit /
 IBM Quantum Runtime execution.
+
+**Author:** Emiliano Orlando  
+**Repository:** `emilianorlando-collab/dorabella_quantum_decoder`
 
 This repository is an experimental cryptanalysis framework. It does not claim a
 solution to the Dorabella cipher. Its purpose is to make hypotheses testable,
 repeatable, and auditable while keeping the hard cryptographic constraints
 separate from semantic ranking and quantum sampling.
 
-## What This Project Does
+## 🧩 What Is the Dorabella Cipher?
+
+The Dorabella cipher is a short encrypted note associated with the English
+composer Edward Elgar and addressed to Dora Penny, whom Elgar nicknamed
+"Dorabella." The message is famous because it uses a compact alphabet of curved
+symbols rather than ordinary letters, and because no universally accepted
+solution has been established.
+
+From a computational perspective, the cipher is attractive because it is small
+enough to model exactly but ambiguous enough to create a large combinatorial
+search space. That makes it a useful case study for hybrid cryptanalysis:
+symbolic constraints can rule out impossible mappings, while statistical,
+linguistic, neural, and quantum-inspired methods can prioritize the most
+plausible remaining branches.
+
+## ⚛️ Why Quantum-Hybrid Search?
+
+The project uses quantum computing as a **structured sampling layer**, not as a
+claim that a quantum processor can instantly brute-force the entire cipher.
+Current public QPUs are powerful research devices, but the full Dorabella
+problem still requires global constraints, semantic scoring, and careful
+classical orchestration.
+
+Quantum and quantum-inspired methods are useful here because they can support:
+
+- compact block sampling over many letter assignments;
+- future Grover-style oracle experiments for constraint-satisfying states;
+- hybrid loops where a classical solver prepares small, meaningful subproblems;
+- empirical comparison between local sampling, Qiskit Aer, and IBM Quantum
+  Runtime backends.
+
+In this repository, the symbolic engine remains the source of truth: no quantum
+sample is accepted unless it satisfies the bijection and orientation rules.
+
+## 🔎 What This Project Does
 
 The Dorabella cipher is modeled as a sequence of oriented symbols arranged in
 three rows. The solver treats the transcription as a constrained search problem:
@@ -28,7 +71,7 @@ The repository intentionally ships with a neutral public skeleton. Private
 plaintext hypotheses, anchors, notes, and generated reports are excluded from
 version control.
 
-## Architecture
+## 🧱 Architecture
 
 ```text
 scripts/
@@ -50,7 +93,7 @@ solvers/dorabella/
   dorabella_memory_ai.py     Neural feedback and replay-buffer learning
 ```
 
-## Core Ideas
+## 🧠 Core Ideas
 
 ### Strict Bijection
 
@@ -96,7 +139,7 @@ The current IBM integration is a block sampler, not a full semantic Grover
 oracle. The symbolic and semantic layers remain responsible for global
 consistency.
 
-## Private Hypotheses
+## 🔐 Private Hypotheses
 
 Private hypotheses should live in a local file that is intentionally ignored by
 git:
@@ -109,7 +152,7 @@ Use `solvers/dorabella/dorabella_private_data.example.py` as a template. This
 keeps research assumptions out of the public repository while preserving the
 reproducible algorithmic framework.
 
-## Installation
+## ⚙️ Installation
 
 Python 3.10+ is recommended for current Qiskit Runtime support.
 
@@ -126,7 +169,7 @@ For IBM Quantum Runtime:
 pip install -U qiskit-ibm-runtime
 ```
 
-## Usage
+## 🚀 Usage
 
 Inspect the model without running a search:
 
@@ -177,7 +220,7 @@ python scripts/run_qnn_cycles.py \
   --report reports/ibm_smoke_report.json
 ```
 
-## Reports
+## 📊 Reports
 
 Reports are generated as JSON files and are ignored by git. Console output
 includes a compact summary with:
@@ -189,12 +232,12 @@ includes a compact summary with:
 - tokenized rows;
 - report and memory paths.
 
-## Security
+## 🛡️ Security
 
 Do not commit API keys, notebook outputs, private notes, generated reports, or
 private hypothesis files. The included `.gitignore` excludes these by default.
 
-## Status
+## 🧪 Status
 
 This is a research codebase. It is designed to support systematic experiments,
 not to assert a final plaintext. Contributions should preserve the separation
