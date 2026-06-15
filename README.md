@@ -33,6 +33,33 @@ symbolic constraints can rule out impossible mappings, while statistical,
 linguistic, neural, and quantum-inspired methods can prioritize the most
 plausible remaining branches.
 
+## 📊 Results So Far
+
+The current framework has produced measurable search progress, but it has not
+produced a validated decipherment. Percentages below describe internal candidate
+coverage under the solver's constraints; they should not be read as proof that
+the same percentage of the historical plaintext has been solved.
+
+| Experiment | Best observed result | What it means |
+| --- | ---: | --- |
+| Integrated local search | ~85.7% structural coverage | The symbolic engine can fill a large portion of the cipher while preserving strict consistency rules. |
+| Semantic scoring pass | ~57.1% semantic coverage | Fluent English remains the hard bottleneck; many high-coverage candidates are still linguistically weak. |
+| IBM Quantum Runtime smoke tests | <50% coverage in short runs | Real QPU execution is working, but current hardware is used as a sampler, not as a full-message brute-force oracle. |
+
+Main conclusions:
+
+- strict bijection and rotating alphabets are now enforced as first-class
+  constraints;
+- ambiguous symbol orientations can be represented and propagated instead of
+  being flattened too early;
+- quantum execution is technically integrated through Qiskit Aer and IBM
+  Quantum Runtime, including backend-specific transpilation;
+- the next research bottleneck is semantic discrimination: the solver needs to
+  reject incoherent high-coverage candidates earlier and allocate more search
+  effort to globally plausible phrase structures;
+- private hypotheses, candidate plaintexts, and research notes are intentionally
+  excluded from the public repository.
+
 ## ⚛️ Why Quantum-Hybrid Search?
 
 The project uses quantum computing as a **structured sampling layer**, not as a
