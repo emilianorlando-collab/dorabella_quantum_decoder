@@ -1,4 +1,4 @@
-# Dorabella Quantum Decoder
+# 📜 Dorabella Quantum Decoder
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![Qiskit](https://img.shields.io/badge/Qiskit-Quantum-6929C4?logo=qiskit&logoColor=white)
@@ -18,7 +18,7 @@ solution to the Dorabella cipher. Its purpose is to make hypotheses testable,
 repeatable, and auditable while keeping the hard cryptographic constraints
 separate from semantic ranking and quantum sampling.
 
-## 🧩 What Is the Dorabella Cipher?
+## 🧩 What is the Dorabella cipher?
 
 The Dorabella cipher is a short encrypted note associated with the English
 composer Edward Elgar and addressed to Dora Penny, whom Elgar nicknamed
@@ -33,7 +33,7 @@ symbolic constraints can rule out impossible mappings, while statistical,
 linguistic, neural, and quantum-inspired methods can prioritize the most
 plausible remaining branches.
 
-## 📊 Results So Far
+## 📊 Results so far
 
 The current framework has produced measurable search progress, but it has not
 produced a validated decipherment. Percentages below describe internal candidate
@@ -60,7 +60,7 @@ Main conclusions:
 - private hypotheses, candidate plaintexts, and research notes are intentionally
   excluded from the public repository.
 
-## ⚛️ Why Quantum-Hybrid Search?
+## ⚛️ Why quantum-hybrid search?
 
 The project uses quantum computing as a **structured sampling layer**, not as a
 claim that a quantum processor can instantly brute-force the entire cipher.
@@ -79,7 +79,7 @@ Quantum and quantum-inspired methods are useful here because they can support:
 In this repository, the symbolic engine remains the source of truth: no quantum
 sample is accepted unless it satisfies the bijection and orientation rules.
 
-## 🔎 What This Project Does
+## 🔎 What this project does
 
 The Dorabella cipher is modeled as a sequence of oriented symbols arranged in
 three rows. The solver treats the transcription as a constrained search problem:
@@ -120,7 +120,7 @@ solvers/dorabella/
   dorabella_memory_ai.py     Neural feedback and replay-buffer learning
 ```
 
-## 🧠 Core Ideas
+## 🧠 Core ideas
 
 ### Strict Bijection
 
@@ -166,7 +166,7 @@ The current IBM integration is a block sampler, not a full semantic Grover
 oracle. The symbolic and semantic layers remain responsible for global
 consistency.
 
-## 🔐 Private Hypotheses
+## 🔐 Private hypotheses
 
 Private hypotheses should live in a local file that is intentionally ignored by
 git:
