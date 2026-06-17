@@ -6,7 +6,7 @@
 ![NumPy](https://img.shields.io/badge/NumPy-Numerics-013243?logo=numpy&logoColor=white)
 ![Status](https://img.shields.io/badge/status-research--prototype-orange)
 
-Quantum-hybrid research toolkit for exploring the Dorabella cipher with strict
+This is a quantum-hybrid research toolkit for exploring the Dorabella cipher with strict
 symbolic constraints, lexical search, persistent memory, and optional Qiskit /
 IBM Quantum Runtime execution.
 
