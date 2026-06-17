@@ -122,13 +122,13 @@ solvers/dorabella/
 
 ## 🧠 Core ideas
 
-### Strict Bijection
+### Strict bijection
 
 The solver never accepts a candidate that maps one symbol to multiple letters
 inside the same rotating alphabet, or maps two symbols to the same canonical
 letter inside that alphabet. This is the core mathematical rule of the project.
 
-### Rotating Alphabets
+### Rotating alphabets
 
 Positions are assigned to one of four alphabets by global index. The symbolic
 layer validates assignments against this rotation before semantic scoring is
@@ -140,21 +140,21 @@ Some symbols admit multiple orientation readings. The solver keeps those
 possibilities explicit and propagates decisions through every later occurrence
 of the same alphabet/symbol combination.
 
-### Lexical Lattice
+### Lexical lattice
 
 The lexical lattice proposes word-level paths across each row and across the
 whole cryptogram, but every proposed word path is still filtered through the
 same bijection engine. This prevents fluent-looking text from bypassing the
 cryptographic constraints.
 
-### Active Memory
+### Active memory
 
 Every run can write a JSON memory file containing candidates, rejections,
 symbol-letter tendencies, neural replay data, and QNN training summaries. Later
 runs can use this memory to avoid repeating low-quality branches and to promote
 better-scoring structures.
 
-### Quantum Runtime Integration
+### Quantum runtime integration
 
 The quantum module supports:
 
